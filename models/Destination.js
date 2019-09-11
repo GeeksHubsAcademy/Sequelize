@@ -1,10 +1,10 @@
-const CONN=require('../config/sequelize');
-const Sequelize=require('sequelize');
-
-const DestinationModel=CONN.define('destination',{
-    travel:Sequelize.STRING
-},{
-    timestamps: false //
-})
-
-module.exports=DestinationModel
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Destination = sequelize.define('Destination', {
+    travel: DataTypes.STRING,
+  }, {});
+  Destination.associate = function(models) {
+    // associations can be defined here
+  };
+  return Destination;
+};
